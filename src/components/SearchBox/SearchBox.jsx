@@ -16,7 +16,6 @@ function SearchBox({ value, onFilter }) {
         value={value}
         onChange={(e) => onFilter(e.target.value)}
       />
-      <p>{value}</p>
     </>
   );
 }

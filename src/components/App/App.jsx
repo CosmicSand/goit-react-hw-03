@@ -32,12 +32,16 @@ function App() {
     }
   }
 
+  const visibleContacts = contacts.filter((contact) =>
+    contact.name.toLowerCase().includes(filter.toLowerCase())
+  );
+
   return (
     <div className={css.container}>
       <h1 className={css.header}>Phonebook</h1>
       <ContactForm onAdd={addContact} />
       <SearchBox value={filter} onFilter={setFilter} />
-      <ContactList contacts={contacts} onDel={deleteContact} />
+      <ContactList contacts={visibleContacts} onDel={deleteContact} />
     </div>
   );
 }
