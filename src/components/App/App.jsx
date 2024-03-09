@@ -8,6 +8,7 @@ import css from "./App.module.css";
 function App() {
   const LOCAL_STORAGE_KEY = "contactList";
   const [contacts, setContacts] = useState(() => getContacts());
+  const [filter, setFilter] = useState("");
 
   function addContact(newContact) {
     setContacts((prevContacts) => [...prevContacts, newContact]);
@@ -35,7 +36,7 @@ function App() {
     <div className={css.container}>
       <h1 className={css.header}>Phonebook</h1>
       <ContactForm onAdd={addContact} />
-      <SearchBox />
+      <SearchBox value={filter} onFilter={setFilter} />
       <ContactList contacts={contacts} onDel={deleteContact} />
     </div>
   );
