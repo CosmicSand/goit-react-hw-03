@@ -20,7 +20,7 @@ function ContactForm({ onAdd }) {
 
   function handleSubmit(values, actions) {
     const newContact = { id: Date.now(), ...values };
-    const arrayLikeNumer = [];
+    const arrayLikeNumber = [];
 
     // Phone number formatting
 
@@ -30,9 +30,9 @@ function ContactForm({ onAdd }) {
       .split("")
       .map((num, i) => {
         if ((i % 2 !== 0 && i >= 5) || i === 3) {
-          arrayLikeNumer.push("-");
+          arrayLikeNumber.push("-");
         }
-        arrayLikeNumer.push(num);
+        arrayLikeNumber.push(num);
       });
 
     newContact.name = newContact.name
@@ -43,7 +43,7 @@ function ContactForm({ onAdd }) {
       )
       .join(" ");
 
-    newContact.number = arrayLikeNumer.join("");
+    newContact.number = arrayLikeNumber.join("");
 
     onAdd(newContact);
 
