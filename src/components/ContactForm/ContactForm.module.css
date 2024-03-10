@@ -16,7 +16,7 @@
 }
 
 .input::placeholder {
-  color: hsla(60, 57%, 91%, 0.597);
+  color: hsla(60, 3%, 71%, 0.597);
 }
 .input:focus,
 .input:hover,
